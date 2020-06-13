@@ -54,7 +54,7 @@ public class iteminit
 	
 	public enum ModItemTier implements IItemTier
 	{
-		DRAGONITE(4, 5000, 20.0f, 10.0f, 275, () -> {
+		DRAGONITE(4, 5000, 25.0f, 10.0f, 275, () -> {
 			return Ingredient.fromItems(iteminit.dragonite);
 		});
 		
