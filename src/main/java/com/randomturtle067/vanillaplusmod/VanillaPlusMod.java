@@ -71,4 +71,4 @@ public class VanillaPlusMod
 			return new ItemStack(iteminit.taco);
 		}
 	}
-}
+} 
