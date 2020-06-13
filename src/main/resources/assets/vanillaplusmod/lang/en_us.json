@@ -1,13 +1,13 @@
 {
 	"item.vanillaplusmod.taco": "Taco",
 	"item.vanillaplusmod.dragonite": "Dragonite",
+	"item.vanillaplusmod.dragon_totem": "Dragon Totem",
 	
 	"item.vanillaplusmod.dragonite_sword": "Dragonite Sword",
 	"item.vanillaplusmod.dragonite_pik": "Dragonite Pickaxe",
 	"item.vanillaplusmod.dragonite_shovel": "Dragonite Shovel",
 	"item.vanillaplusmod.dragonite_axe": "Dragonite Axe",
-	"item.vanillaplusmod.dragonite_hoe": "Dragonite Hoe",
-	
+	"item.vanillaplusmod.dragonite_hoe": "Dragonite Hoe",	
 
 	"block.vanillaplusmod.contained_lava": "Contained Lava",
 	"block.vanillaplusmod.dragonite_ore": "Dragonite Ore",

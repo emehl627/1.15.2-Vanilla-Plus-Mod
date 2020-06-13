@@ -3,8 +3,8 @@ package com.randomturtle067.vanillaplusmod.init;
 import java.util.function.Supplier;
 
 import com.randomturtle067.vanillaplusmod.VanillaPlusMod;
-
 import com.randomturtle067.vanillaplusmod.VanillaPlusMod.VanillaItemGroup;
+import com.randomturtle067.vanillaplusmod.objects.items.DragonTotemItem;
 
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.Food;
@@ -30,6 +30,7 @@ public class iteminit
 {
 	public static final Item taco = null;
 	public static final Item dragonite = null;
+	public static final Item dragon_totem = null;
 	
 	//Tools
 	public static final Item dragonite_sword = null;
@@ -42,6 +43,7 @@ public class iteminit
 	public static void registerItems(final RegistryEvent.Register<Item> event)
 	{
 		event.getRegistry().register(new Item(new Item.Properties().group(VanillaItemGroup.instance).food(new Food.Builder().hunger(15).saturation(5f).setAlwaysEdible().meat().effect(new EffectInstance(Effects.STRENGTH, 3000, 5), 0.7f).effect(new EffectInstance(Effects.ABSORPTION, 3000, 2), 1f).effect(new EffectInstance(Effects.SPEED, 3000, 4), 1f).effect(new EffectInstance(Effects.INSTANT_HEALTH, 1, 5), 1f).effect(new EffectInstance(Effects.NAUSEA, 600, 2), 0.25f).effect(new EffectInstance(Effects.MINING_FATIGUE, 1500, 3), 0.25f).effect(new EffectInstance(Effects.POISON, 1500, 2), .1f).build()).maxStackSize(1)).setRegistryName("taco"));
+		event.getRegistry().register(new DragonTotemItem(new Item.Properties().group(VanillaItemGroup.instance).maxStackSize(1)).setRegistryName("dragon_totem"));
 		event.getRegistry().register(new Item(new Item.Properties().group(VanillaItemGroup.instance).maxStackSize(64)).setRegistryName("dragonite"));
 	
 		//Tools
@@ -54,7 +56,7 @@ public class iteminit
 	
 	public enum ModItemTier implements IItemTier
 	{
-		DRAGONITE(4, 5000, 25.0f, 10.0f, 275, () -> {
+		DRAGONITE(4, 5000, 30.0f, 10.0f, 275, () -> {
 			return Ingredient.fromItems(iteminit.dragonite);
 		});
 		
