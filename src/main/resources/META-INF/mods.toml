@@ -1,0 +1,47 @@
+modLoader="javafml"
+
+loaderVersion="[31,)"
+
+issueTrackerURL="http://my.issue.tracker/"
+
+[[mods]]
+
+modId="vanillaplusmod"
+
+version="1.0" #mandatory
+
+displayName="Example Mod"
+
+updateJSONURL="http://myurl.me/"
+
+displayURL="http://example.com/"
+
+logoFile="examplemod.png"
+
+credits="TurtyWurty Because His Video Tutorials Inspired Me To Make This Mod And It Taught Me How To Do It"
+
+authors="RandomTurtle067"
+
+description='''
+This Is A Mod That Adds Things To The Game That I Feel Like Should Be There
+If You Disagree With Some Of It, You Can Make Your Own Version Instead Of Bugging Me
+'''
+
+[[dependencies.examplemod]] #optional
+    # the modid of the dependency
+    modId="forge" #mandatory
+    # Does this dependency have to exist - if not, ordering below must be specified
+    mandatory=true #mandatory
+    # The version range of the dependency
+    versionRange="[31,)" #mandatory
+    # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
+    ordering="NONE"
+    # Side this dependency is applied on - BOTH, CLIENT or SERVER
+    side="BOTH"
+
+[[dependencies.examplemod]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.15.2]"
+    ordering="NONE"
+    side="BOTH"
