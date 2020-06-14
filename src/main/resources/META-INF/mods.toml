@@ -8,9 +8,9 @@ issueTrackerURL="http://my.issue.tracker/"
 
 modId="vanillaplusmod"
 
-version="1.0" #mandatory
+version="1.0"
 
-displayName="Example Mod"
+displayName="Vanilla Plus"
 
 updateJSONURL="http://myurl.me/"
 
@@ -23,8 +23,8 @@ credits="TurtyWurty Because His Video Tutorials Inspired Me To Make This Mod And
 authors="RandomTurtle067"
 
 description='''
-This Is A Mod That Adds Things To The Game That I Feel Like Should Be There
-If You Disagree With Some Of It, You Can Make Your Own Version Instead Of Bugging Me
+This Is A Mod That Adds Things To The Game That Are A Bit Far From Vanilla, 
+But Don't Change The Game To Much
 '''
 
 [[dependencies.examplemod]] #optional
