@@ -7,7 +7,12 @@
 	"item.vanillaplusmod.dragonite_pik": "Dragonite Pickaxe",
 	"item.vanillaplusmod.dragonite_shovel": "Dragonite Shovel",
 	"item.vanillaplusmod.dragonite_axe": "Dragonite Axe",
-	"item.vanillaplusmod.dragonite_hoe": "Dragonite Hoe",	
+	"item.vanillaplusmod.dragonite_hoe": "Dragonite Hoe",
+	
+	"item.vanillaplusmod.dragonite_helm": "Dragonite Helmet",
+	"item.vanillaplusmod.dragonite_chest": "Dragonite Chestplate",
+	"item.vanillaplusmod.dragonite_legs": "Dragonite Leggings",
+	"item.vanillaplusmod.dragonite_boots": "Dragonite Boots",
 
 	"block.vanillaplusmod.contained_lava": "Contained Lava",
 	"block.vanillaplusmod.dragonite_ore": "Dragonite Ore",
