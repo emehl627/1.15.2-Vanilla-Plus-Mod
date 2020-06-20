@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "iii",
+    "iII",
+    "iII"
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:lava_bucket"
+    },
+    "i": {
+      "item": "minecraft:string"
+    }
+  },
+  "result": {
+    "item": "vanillaplusmod:contained_lava"
+  }
+}

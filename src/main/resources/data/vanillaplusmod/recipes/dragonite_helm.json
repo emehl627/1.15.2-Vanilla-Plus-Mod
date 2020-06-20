@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "III",
+    "I I"
+  ],
+  "key": {
+    "I": {
+      "item": "vanillaplusmod:dragonite"
+    }
+  },
+  "result": {
+    "item": "vanillaplusmod:dragonite_helm"
+  }
+}

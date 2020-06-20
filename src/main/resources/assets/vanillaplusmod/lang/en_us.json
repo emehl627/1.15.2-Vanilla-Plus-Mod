@@ -2,6 +2,7 @@
 	"item.vanillaplusmod.taco": "Taco",
 	"item.vanillaplusmod.dragonite": "Dragonite",
 	"item.vanillaplusmod.dragon_totem": "Dragon Totem",
+	"item.vanillaplusmod.fossil": "Fossil",
 	
 	"item.vanillaplusmod.dragonite_sword": "Dragonite Sword",
 	"item.vanillaplusmod.dragonite_pik": "Dragonite Pickaxe",
@@ -13,10 +14,15 @@
 	"item.vanillaplusmod.dragonite_chest": "Dragonite Chestplate",
 	"item.vanillaplusmod.dragonite_legs": "Dragonite Leggings",
 	"item.vanillaplusmod.dragonite_boots": "Dragonite Boots",
+	"item.vanillaplusmod.stone_helm": "Stone Helmet",
+	"item.vanillaplusmod.stone_chest": "Stone Chestplate",
+	"item.vanillaplusmod.stone_legs": "Stone Leggings",
+	"item.vanillaplusmod.stone_boots": "Stone Boots",
 
 	"block.vanillaplusmod.contained_lava": "Contained Lava",
 	"block.vanillaplusmod.dragonite_ore": "Dragonite Ore",
 	"block.vanillaplusmod.dragon_block": "Dragonite Block",
+	"block.vanillaplusmod.fossil_ore": "Fossil Ore",
 	
 	"itemGroup.VanillaPlusMod": "Vanilla Plus Mod"
 }

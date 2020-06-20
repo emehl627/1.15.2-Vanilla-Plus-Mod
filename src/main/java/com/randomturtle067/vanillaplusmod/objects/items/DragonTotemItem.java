@@ -2,8 +2,6 @@ package com.randomturtle067.vanillaplusmod.objects.items;
 
 import java.util.List;
 
-import com.randomturtle067.vanillaplusmod.util.helpers.KeyboardHelper;
-
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;

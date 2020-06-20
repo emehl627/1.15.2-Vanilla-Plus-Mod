@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "II ",
+    " i ",
+    " i "
+  ],
+  "key": {
+    "I": {
+      "item": "vanillaplusmod:dragonite"
+    },
+    "i": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "vanillaplusmod:dragonite_hoe"
+  }
+}
