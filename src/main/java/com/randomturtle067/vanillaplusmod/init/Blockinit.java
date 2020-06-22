@@ -23,6 +23,8 @@ public class Blockinit {
 	public static final Block dragonite_ore = null;
 	public static final Block dragon_block = null;
 	public static final Block fossil_ore = null;
+	public static final Block dark_quartz_ore = null;
+	public static final Block blast_proof_glass = null;
 
 	@SubscribeEvent
 	public static void registerBlocks(final RegistryEvent.Register<Block> event) {
@@ -36,6 +38,12 @@ public class Blockinit {
 				.harvestTool(ToolType.PICKAXE).harvestLevel(3)).setRegistryName("dragon_block"));
 		event.getRegistry().register(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(5.0f)
 				.sound(SoundType.STONE).harvestLevel(1)).setRegistryName("fossil_ore"));
+		event.getRegistry()
+				.register(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0f, 3.0f)
+						.sound(SoundType.STONE).harvestLevel(1).harvestTool(ToolType.PICKAXE))
+								.setRegistryName("dark_quartz_ore"));
+		event.getRegistry().register(new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(0.3f, 500.0f)
+				.sound(SoundType.STONE).harvestLevel(1)).setRegistryName("blast_proof_glass"));
 	}
 
 	@SubscribeEvent
@@ -52,6 +60,12 @@ public class Blockinit {
 		event.getRegistry().register(
 				new BlockItem(fossil_ore, new Item.Properties().maxStackSize(64).group(VanillaItemGroup.instance))
 						.setRegistryName("fossil_ore"));
+		event.getRegistry().register(
+				new BlockItem(dark_quartz_ore, new Item.Properties().maxStackSize(64).group(VanillaItemGroup.instance))
+						.setRegistryName("dark_quartz_ore"));
+		event.getRegistry().register(
+				new BlockItem(blast_proof_glass, new Item.Properties().maxStackSize(64).group(VanillaItemGroup.instance))
+						.setRegistryName("blast_proof_glass"));
 	}
 
 }

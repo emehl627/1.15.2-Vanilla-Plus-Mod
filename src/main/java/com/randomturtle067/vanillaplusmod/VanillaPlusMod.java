@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.randomturtle067.vanillaplusmod.init.iteminit;
+import com.randomturtle067.vanillaplusmod.world.gen.DarkQuartzOreGenerator;
 import com.randomturtle067.vanillaplusmod.world.gen.DragoniteOreGenerator;
 import com.randomturtle067.vanillaplusmod.world.gen.FossilOreGenerator;
 
@@ -66,6 +67,12 @@ public class VanillaPlusMod
     public static void loadCompleteEvent1(FMLLoadCompleteEvent event)
     {
     	FossilOreGenerator.generateOre();
+    }
+    
+    @SubscribeEvent
+    public static void loadCompleteEvent2(FMLLoadCompleteEvent event)
+    {
+    	DarkQuartzOreGenerator.generateOre();
     }
     
 

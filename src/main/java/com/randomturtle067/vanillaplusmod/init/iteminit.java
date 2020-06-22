@@ -15,6 +15,7 @@ import net.minecraft.item.HoeItem;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.Item;
+import net.minecraft.item.Item.Properties;
 import net.minecraft.item.Items;
 import net.minecraft.item.PickaxeItem;
 import net.minecraft.item.ShovelItem;
@@ -40,6 +41,7 @@ public class iteminit {
 	public static final Item dragonite = null;
 	public static final Item dragon_totem = null;
 	public static final Item fossil = null;
+	public static final Item dark_quartz = null;
 
 	// Tools
 	public static final Item dragonite_sword = null;
@@ -47,10 +49,11 @@ public class iteminit {
 	public static final Item dragonite_shovel = null;
 	public static final Item dragonite_axe = null;
 	public static final Item dragonite_hoe = null;
-	public static final Item h_dragon_sword = null;
-	public static final Item h_dragon_pik = null;
-	public static final Item h_dragon_shovel = null;
-	public static final Item h_dragon_axe = null;
+	public static final Item quartz_sword = null;
+	public static final Item quartz_pik = null;
+	public static final Item quartz_shovel = null;
+	public static final Item quartz_axe = null;
+	public static final Item quartz_hoe = null;
 
 	// Armor
 	public static final Item dragonite_helm = null;
@@ -61,7 +64,12 @@ public class iteminit {
 	public static final Item stone_chest = null;
 	public static final Item stone_legs = null;
 	public static final Item stone_boots = null;
+	public static final Item quartz_helm = null;
+	public static final Item quartz_chest = null;
+	public static final Item quartz_legs = null;
+	public static final Item quartz_boots = null;
 
+	@SuppressWarnings("deprecation")
 	@SubscribeEvent
 	public static void registerItems(final RegistryEvent.Register<Item> event) {
 		event.getRegistry()
@@ -83,6 +91,8 @@ public class iteminit {
 		event.getRegistry()
 				.register(new FossilItem(new Item.Properties().group(VanillaItemGroup.instance).maxStackSize(64))
 						.setRegistryName("fossil"));
+		event.getRegistry().register(new Item(new Item.Properties().group(VanillaItemGroup.instance).maxStackSize(64))
+				.setRegistryName("dark_quartz"));
 
 		// Tools
 		event.getRegistry().register(
@@ -100,14 +110,21 @@ public class iteminit {
 		event.getRegistry().register(
 				new HoeItem(ModItemTier.DRAGONITE, 5.0f, new Item.Properties().group(VanillaItemGroup.instance))
 						.setRegistryName("dragonite_hoe"));
-		event.getRegistry().register(new SwordItem(ModItemTier1.HEATED_DRAGONITE, 15, 6.0f,
-				new Item.Properties().group(VanillaItemGroup.instance)).setRegistryName("h_dragon_sword"));
-		event.getRegistry().register(new PickaxeItem(ModItemTier1.HEATED_DRAGONITE, 9, 3.0f,
-				new Item.Properties().group(VanillaItemGroup.instance)).setRegistryName("h_dragon_pik"));
-		event.getRegistry().register(new ShovelItem(ModItemTier1.HEATED_DRAGONITE, 10, 3.0f,
-				new Item.Properties().group(VanillaItemGroup.instance)).setRegistryName("h_dragon_shovel"));
-		event.getRegistry().register(new SwordItem(ModItemTier1.HEATED_DRAGONITE, 12, 3.0f,
-				new Item.Properties().group(VanillaItemGroup.instance)).setRegistryName("h_dragon_sword"));
+		event.getRegistry().register(
+				new SwordItem(QuartzItemTier.QUARTZ, 7, 6.0f, new Item.Properties().group(VanillaItemGroup.instance))
+						.setRegistryName("quartz_sword"));
+		event.getRegistry().register(
+				new PickaxeItem(QuartzItemTier.QUARTZ, 2, 3.0f, new Item.Properties().group(VanillaItemGroup.instance))
+						.setRegistryName("quartz_pik"));
+		event.getRegistry().register(
+				new ShovelItem(QuartzItemTier.QUARTZ, 2, 3.0f, new Item.Properties().group(VanillaItemGroup.instance))
+						.setRegistryName("quartz_shovel"));
+		event.getRegistry().register(
+				new AxeItem(QuartzItemTier.QUARTZ, 2, 3.0f, new Item.Properties().group(VanillaItemGroup.instance))
+						.setRegistryName("quartz_axe"));
+		event.getRegistry().register(
+				new HoeItem(QuartzItemTier.QUARTZ, 3.0f, new Item.Properties().group(VanillaItemGroup.instance))
+						.setRegistryName("quartz_hoe"));
 
 		// Armor
 		event.getRegistry().register(new ArmorItem(DragoniteArmorMaterial.DRAGONITE, EquipmentSlotType.HEAD,
@@ -126,6 +143,15 @@ public class iteminit {
 				new Item.Properties().group(VanillaItemGroup.instance)).setRegistryName("stone_legs"));
 		event.getRegistry().register(new ArmorItem(StoneArmorMaterial.STONE, EquipmentSlotType.FEET,
 				new Item.Properties().group(VanillaItemGroup.instance)).setRegistryName("stone_boots"));
+		event.getRegistry().register(new ArmorItem(QuartzArmorMaterial.QUARTZ, EquipmentSlotType.HEAD,
+				new Item.Properties().group(VanillaItemGroup.instance)).setRegistryName("quartz_helm"));
+		event.getRegistry().register(new ArmorItem(QuartzArmorMaterial.QUARTZ, EquipmentSlotType.CHEST,
+				new Item.Properties().group(VanillaItemGroup.instance)).setRegistryName("quartz_chest"));
+		event.getRegistry().register(new ArmorItem(QuartzArmorMaterial.QUARTZ, EquipmentSlotType.LEGS,
+				new Item.Properties().group(VanillaItemGroup.instance)).setRegistryName("quartz_legs"));
+		event.getRegistry().register(new ArmorItem(QuartzArmorMaterial.QUARTZ, EquipmentSlotType.FEET,
+				new Item.Properties().group(VanillaItemGroup.instance)).setRegistryName("quartz_boots"));
+
 	}
 
 	public enum ModItemTier implements IItemTier {
@@ -141,59 +167,6 @@ public class iteminit {
 		private final LazyValue<Ingredient> repairMaterial;
 
 		private ModItemTier(int harvestLevel, int maxUses, float efficiency, float attackDamage, int enchantability,
-				Supplier<Ingredient> repairMaterial) {
-			this.harvestLevel = harvestLevel;
-			this.maxUses = maxUses;
-			this.efficiency = efficiency;
-			this.attackDamage = attackDamage;
-			this.enchantability = enchantability;
-			this.repairMaterial = new LazyValue<>(repairMaterial);
-		}
-
-		@Override
-		public int getMaxUses() {
-			return this.maxUses;
-		}
-
-		@Override
-		public float getEfficiency() {
-			return this.efficiency;
-		}
-
-		@Override
-		public float getAttackDamage() {
-			return this.attackDamage;
-		}
-
-		@Override
-		public int getHarvestLevel() {
-			return this.harvestLevel;
-		}
-
-		@Override
-		public int getEnchantability() {
-			return this.enchantability;
-		}
-
-		@Override
-		public Ingredient getRepairMaterial() {
-			return this.repairMaterial.getValue();
-		}
-	}
-
-	public enum ModItemTier1 implements IItemTier {
-		HEATED_DRAGONITE(5, 3750, 50.0f, 15.0f, 200, () -> {
-			return Ingredient.fromItems(iteminit.dragonite);
-		});
-
-		private final int harvestLevel;
-		private final int maxUses;
-		private final float efficiency;
-		private final float attackDamage;
-		private final int enchantability;
-		private final LazyValue<Ingredient> repairMaterial;
-
-		private ModItemTier1(int harvestLevel, int maxUses, float efficiency, float attackDamage, int enchantability,
 				Supplier<Ingredient> repairMaterial) {
 			this.harvestLevel = harvestLevel;
 			this.maxUses = maxUses;
@@ -319,6 +292,124 @@ public class iteminit {
 		private final LazyValue<Ingredient> repairMaterial;
 
 		private StoneArmorMaterial(String nameIn, int maxDamageFactorIn, int[] damageReductionAmmountIn,
+				int enchantabilityIn, SoundEvent soundEventIn, float toughnessIn,
+				Supplier<Ingredient> repairMaterialIn) {
+			this.name = nameIn;
+			this.maxDamageFactor = maxDamageFactorIn;
+			this.damageReductionAmmountArray = damageReductionAmmountIn;
+			this.enchantability = enchantabilityIn;
+			this.soundEvent = soundEventIn;
+			this.toughness = toughnessIn;
+			this.repairMaterial = new LazyValue<>(repairMaterialIn);
+		}
+
+		@Override
+		public int getDurability(EquipmentSlotType slotIn) {
+			return MAX_DAMAGE_ARRAY[slotIn.getIndex()] * this.maxDamageFactor;
+		}
+
+		@Override
+		public int getDamageReductionAmount(EquipmentSlotType slotIn) {
+			return this.damageReductionAmmountArray[slotIn.getIndex()];
+		}
+
+		@Override
+		public int getEnchantability() {
+			return this.enchantability;
+		}
+
+		@Override
+		public SoundEvent getSoundEvent() {
+			return this.soundEvent;
+		}
+
+		@Override
+		public Ingredient getRepairMaterial() {
+			return this.repairMaterial.getValue();
+		}
+
+		@Override
+		public String getName() {
+			return this.name;
+		}
+
+		@OnlyIn(Dist.CLIENT)
+		public float getToughness() {
+			return this.toughness;
+		}
+	}
+
+	public enum QuartzItemTier implements IItemTier {
+		QUARTZ(1, 250, 15.0f, 6.5f, 1000, () -> {
+			return Ingredient.fromItems(Items.QUARTZ);
+		});
+
+		private final int harvestLevel;
+		private final int maxUses;
+		private final float efficiency;
+		private final float attackDamage;
+		private final int enchantability;
+		private final LazyValue<Ingredient> repairMaterial;
+
+		private QuartzItemTier(int harvestLevel, int maxUses, float efficiency, float attackDamage, int enchantability,
+				Supplier<Ingredient> repairMaterial) {
+			this.harvestLevel = harvestLevel;
+			this.maxUses = maxUses;
+			this.efficiency = efficiency;
+			this.attackDamage = attackDamage;
+			this.enchantability = enchantability;
+			this.repairMaterial = new LazyValue<>(repairMaterial);
+		}
+
+		@Override
+		public int getMaxUses() {
+			return this.maxUses;
+		}
+
+		@Override
+		public float getEfficiency() {
+			return this.efficiency;
+		}
+
+		@Override
+		public float getAttackDamage() {
+			return this.attackDamage;
+		}
+
+		@Override
+		public int getHarvestLevel() {
+			return this.harvestLevel;
+		}
+
+		@Override
+		public int getEnchantability() {
+			return this.enchantability;
+		}
+
+		@Override
+		public Ingredient getRepairMaterial() {
+			return this.repairMaterial.getValue();
+		}
+	}
+
+	public enum QuartzArmorMaterial implements IArmorMaterial {
+		QUARTZ(VanillaPlusMod.MOD_ID + ":quartz", 1, new int[] { 2, 5, 6, 2 }, 5, SoundEvents.field_226142_fM_, 1.0f,
+				() ->
+
+				{
+					return Ingredient.fromItems(Items.QUARTZ);
+				});
+
+		private static final int[] MAX_DAMAGE_ARRAY = new int[] { 165, 165, 165, 165 };
+		private final String name;
+		private final int maxDamageFactor;
+		private final int[] damageReductionAmmountArray;
+		private final int enchantability;
+		private final SoundEvent soundEvent;
+		private final float toughness;
+		private final LazyValue<Ingredient> repairMaterial;
+
+		private QuartzArmorMaterial(String nameIn, int maxDamageFactorIn, int[] damageReductionAmmountIn,
 				int enchantabilityIn, SoundEvent soundEventIn, float toughnessIn,
 				Supplier<Ingredient> repairMaterialIn) {
 			this.name = nameIn;
