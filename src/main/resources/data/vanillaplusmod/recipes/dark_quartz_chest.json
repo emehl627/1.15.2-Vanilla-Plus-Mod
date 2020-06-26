@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "Q Q",
+    "QQQ",
+    "QQQ"
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:dark_quartz"
+    }
+  },
+  "result": {
+    "item": "vanillaplusmod:dark_quartz_chest"
+  }
+}

@@ -1,19 +1,19 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "II ",
-    " i ",
+    " II",
+    " iI",
     " i "
   ],
   "key": {
     "I": {
-      "item": "vanillaplusmod:dragon_block"
+      "item": "minecraft:quartz"
     },
     "i": {
       "item": "minecraft:stick"
     }
   },
   "result": {
-    "item": "vanillaplusmod:dragonite_hoe"
+    "item": "vanillaplusmod:quartz_axe"
   }
 }

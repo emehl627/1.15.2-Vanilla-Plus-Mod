@@ -12,17 +12,16 @@ import net.minecraft.world.gen.placement.Placement;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class DarkQuartzOreGenerator {
-	public static void generateOre() 
-	{
-		for (Biome biome : ForgeRegistries.BIOMES) 
-		{
-				if (biome == Biomes.NETHER) 
-				{
-					biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(
-							new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK, Blockinit.dark_quartz_ore.getDefaultState(), 12)).withPlacement(Placement.COUNT_RANGE.configure(
-							new CountRangeConfig(20, 5, 5, 254))));
-				}
-				
+	public static void generateOre() {
+		for (Biome biome : ForgeRegistries.BIOMES) {
+			if (biome == Biomes.NETHER) {
+				biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
+						Feature.ORE
+								.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK,
+										Blockinit.dark_quartz_ore.getDefaultState(), 12))
+								.withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(20, 5, 5, 254))));
+			}
+
 		}
 	}
 }

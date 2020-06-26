@@ -4,6 +4,8 @@ loaderVersion="[31,)"
 
 issueTrackerURL="http://my.issue.tracker/"
 
+logoFile="plus.png"
+
 [[mods]]
 
 modId="vanillaplusmod"
@@ -15,8 +17,6 @@ displayName="Vanilla Plus"
 updateJSONURL="http://myurl.me/"
 
 displayURL="http://example.com/"
-
-logoFile="examplemod.png"
 
 credits="TurtyWurty Because His Video Tutorials Inspired Me To Make This Mod And It Taught Me How To Do It"
 
@@ -42,6 +42,6 @@ But Don't Change The Game To Much
 [[dependencies.examplemod]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.15.2]"
+    versionRange="[1.16]"
     ordering="NONE"
     side="BOTH"

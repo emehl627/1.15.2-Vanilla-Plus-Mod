@@ -42,6 +42,7 @@ public class iteminit {
 	public static final Item dragon_totem = null;
 	public static final Item fossil = null;
 	public static final Item dark_quartz = null;
+	public static final Item logo = null;
 
 	// Tools
 	public static final Item dragonite_sword = null;
@@ -54,6 +55,11 @@ public class iteminit {
 	public static final Item quartz_shovel = null;
 	public static final Item quartz_axe = null;
 	public static final Item quartz_hoe = null;
+	public static final Item dark_quartz_sword = null;
+	public static final Item dark_quartz_pik = null;
+	public static final Item dark_quartz_shovel = null;
+	public static final Item dark_quartz_axe = null;
+	public static final Item dark_quartz_hoe = null;
 
 	// Armor
 	public static final Item dragonite_helm = null;
@@ -68,21 +74,13 @@ public class iteminit {
 	public static final Item quartz_chest = null;
 	public static final Item quartz_legs = null;
 	public static final Item quartz_boots = null;
+	public static final Item dark_quartz_helm = null;
+	public static final Item dark_quartz_chest = null;
+	public static final Item dark_quartz_legs = null;
+	public static final Item dark_quartz_boots = null;
 
-	@SuppressWarnings("deprecation")
 	@SubscribeEvent
 	public static void registerItems(final RegistryEvent.Register<Item> event) {
-		event.getRegistry()
-				.register(new Item(new Item.Properties().group(VanillaItemGroup.instance)
-						.food(new Food.Builder().hunger(15).saturation(5f).setAlwaysEdible().meat()
-								.effect(new EffectInstance(Effects.STRENGTH, 3000, 5), 0.7f)
-								.effect(new EffectInstance(Effects.ABSORPTION, 3000, 2), 1f)
-								.effect(new EffectInstance(Effects.SPEED, 3000, 4), 1f)
-								.effect(new EffectInstance(Effects.INSTANT_HEALTH, 1, 5), 1f)
-								.effect(new EffectInstance(Effects.NAUSEA, 600, 2), 0.25f)
-								.effect(new EffectInstance(Effects.MINING_FATIGUE, 1500, 3), 0.25f)
-								.effect(new EffectInstance(Effects.POISON, 1500, 2), .1f).build())
-						.maxStackSize(1)).setRegistryName("taco"));
 		event.getRegistry()
 				.register(new DragonTotemItem(new Item.Properties().group(VanillaItemGroup.instance).maxStackSize(1))
 						.setRegistryName("dragon_totem"));
@@ -93,6 +91,7 @@ public class iteminit {
 						.setRegistryName("fossil"));
 		event.getRegistry().register(new Item(new Item.Properties().group(VanillaItemGroup.instance).maxStackSize(64))
 				.setRegistryName("dark_quartz"));
+		event.getRegistry().register(new Item(new Item.Properties().maxStackSize(64)).setRegistryName("logo"));
 
 		// Tools
 		event.getRegistry().register(
@@ -111,7 +110,7 @@ public class iteminit {
 				new HoeItem(ModItemTier.DRAGONITE, 5.0f, new Item.Properties().group(VanillaItemGroup.instance))
 						.setRegistryName("dragonite_hoe"));
 		event.getRegistry().register(
-				new SwordItem(QuartzItemTier.QUARTZ, 7, 6.0f, new Item.Properties().group(VanillaItemGroup.instance))
+				new SwordItem(QuartzItemTier.QUARTZ, 4, 6.0f, new Item.Properties().group(VanillaItemGroup.instance))
 						.setRegistryName("quartz_sword"));
 		event.getRegistry().register(
 				new PickaxeItem(QuartzItemTier.QUARTZ, 2, 3.0f, new Item.Properties().group(VanillaItemGroup.instance))
@@ -125,6 +124,16 @@ public class iteminit {
 		event.getRegistry().register(
 				new HoeItem(QuartzItemTier.QUARTZ, 3.0f, new Item.Properties().group(VanillaItemGroup.instance))
 						.setRegistryName("quartz_hoe"));
+		event.getRegistry().register(new SwordItem(DarkQuartzItemTier.DARK_QUARTZ, 4, 6.5f,
+				new Item.Properties().group(VanillaItemGroup.instance)).setRegistryName("dark_quartz_sword"));
+		event.getRegistry().register(new PickaxeItem(DarkQuartzItemTier.DARK_QUARTZ, 2, 3.0f,
+				new Item.Properties().group(VanillaItemGroup.instance)).setRegistryName("dark_quartz_pik"));
+		event.getRegistry().register(new ShovelItem(DarkQuartzItemTier.DARK_QUARTZ, 2, 3.0f,
+				new Item.Properties().group(VanillaItemGroup.instance)).setRegistryName("dark_quartz_shovel"));
+		event.getRegistry().register(new AxeItem(DarkQuartzItemTier.DARK_QUARTZ, 3, 3.0f,
+				new Item.Properties().group(VanillaItemGroup.instance)).setRegistryName("dark_quartz_axe"));
+		event.getRegistry().register(new HoeItem(DarkQuartzItemTier.DARK_QUARTZ, 50.0f,
+				new Item.Properties().group(VanillaItemGroup.instance)).setRegistryName("dark_quartz_hoe"));
 
 		// Armor
 		event.getRegistry().register(new ArmorItem(DragoniteArmorMaterial.DRAGONITE, EquipmentSlotType.HEAD,
@@ -151,6 +160,14 @@ public class iteminit {
 				new Item.Properties().group(VanillaItemGroup.instance)).setRegistryName("quartz_legs"));
 		event.getRegistry().register(new ArmorItem(QuartzArmorMaterial.QUARTZ, EquipmentSlotType.FEET,
 				new Item.Properties().group(VanillaItemGroup.instance)).setRegistryName("quartz_boots"));
+		event.getRegistry().register(new ArmorItem(DarkQuartzArmorMaterial.DARK_QUARTZ, EquipmentSlotType.HEAD,
+				new Item.Properties().group(VanillaItemGroup.instance)).setRegistryName("dark_quartz_helm"));
+		event.getRegistry().register(new ArmorItem(DarkQuartzArmorMaterial.DARK_QUARTZ, EquipmentSlotType.CHEST,
+				new Item.Properties().group(VanillaItemGroup.instance)).setRegistryName("dark_quartz_chest"));
+		event.getRegistry().register(new ArmorItem(DarkQuartzArmorMaterial.DARK_QUARTZ, EquipmentSlotType.LEGS,
+				new Item.Properties().group(VanillaItemGroup.instance)).setRegistryName("dark_quartz_legs"));
+		event.getRegistry().register(new ArmorItem(DarkQuartzArmorMaterial.DARK_QUARTZ, EquipmentSlotType.FEET,
+				new Item.Properties().group(VanillaItemGroup.instance)).setRegistryName("dark_quartz_boots"));
 
 	}
 
@@ -340,7 +357,7 @@ public class iteminit {
 	}
 
 	public enum QuartzItemTier implements IItemTier {
-		QUARTZ(1, 250, 15.0f, 6.5f, 1000, () -> {
+		QUARTZ(1, 100, 15.0f, 1.0f, 1000, () -> {
 			return Ingredient.fromItems(Items.QUARTZ);
 		});
 
@@ -393,7 +410,7 @@ public class iteminit {
 	}
 
 	public enum QuartzArmorMaterial implements IArmorMaterial {
-		QUARTZ(VanillaPlusMod.MOD_ID + ":quartz", 1, new int[] { 2, 5, 6, 2 }, 5, SoundEvents.field_226142_fM_, 1.0f,
+		QUARTZ(VanillaPlusMod.MOD_ID + ":quartz", 1, new int[] { 2, 5, 6, 2 }, 1000, SoundEvents.field_226142_fM_, 1.0f,
 				() ->
 
 				{
@@ -410,6 +427,124 @@ public class iteminit {
 		private final LazyValue<Ingredient> repairMaterial;
 
 		private QuartzArmorMaterial(String nameIn, int maxDamageFactorIn, int[] damageReductionAmmountIn,
+				int enchantabilityIn, SoundEvent soundEventIn, float toughnessIn,
+				Supplier<Ingredient> repairMaterialIn) {
+			this.name = nameIn;
+			this.maxDamageFactor = maxDamageFactorIn;
+			this.damageReductionAmmountArray = damageReductionAmmountIn;
+			this.enchantability = enchantabilityIn;
+			this.soundEvent = soundEventIn;
+			this.toughness = toughnessIn;
+			this.repairMaterial = new LazyValue<>(repairMaterialIn);
+		}
+
+		@Override
+		public int getDurability(EquipmentSlotType slotIn) {
+			return MAX_DAMAGE_ARRAY[slotIn.getIndex()] * this.maxDamageFactor;
+		}
+
+		@Override
+		public int getDamageReductionAmount(EquipmentSlotType slotIn) {
+			return this.damageReductionAmmountArray[slotIn.getIndex()];
+		}
+
+		@Override
+		public int getEnchantability() {
+			return this.enchantability;
+		}
+
+		@Override
+		public SoundEvent getSoundEvent() {
+			return this.soundEvent;
+		}
+
+		@Override
+		public Ingredient getRepairMaterial() {
+			return this.repairMaterial.getValue();
+		}
+
+		@Override
+		public String getName() {
+			return this.name;
+		}
+
+		@OnlyIn(Dist.CLIENT)
+		public float getToughness() {
+			return this.toughness;
+		}
+	}
+
+	public enum DarkQuartzItemTier implements IItemTier {
+		DARK_QUARTZ(1, 200, 19.5f, 1.5f, 1000, () -> {
+			return Ingredient.fromItems(iteminit.dark_quartz);
+		});
+
+		private final int harvestLevel;
+		private final int maxUses;
+		private final float efficiency;
+		private final float attackDamage;
+		private final int enchantability;
+		private final LazyValue<Ingredient> repairMaterial;
+
+		private DarkQuartzItemTier(int harvestLevel, int maxUses, float efficiency, float attackDamage,
+				int enchantability, Supplier<Ingredient> repairMaterial) {
+			this.harvestLevel = harvestLevel;
+			this.maxUses = maxUses;
+			this.efficiency = efficiency;
+			this.attackDamage = attackDamage;
+			this.enchantability = enchantability;
+			this.repairMaterial = new LazyValue<>(repairMaterial);
+		}
+
+		@Override
+		public int getMaxUses() {
+			return this.maxUses;
+		}
+
+		@Override
+		public float getEfficiency() {
+			return this.efficiency;
+		}
+
+		@Override
+		public float getAttackDamage() {
+			return this.attackDamage;
+		}
+
+		@Override
+		public int getHarvestLevel() {
+			return this.harvestLevel;
+		}
+
+		@Override
+		public int getEnchantability() {
+			return this.enchantability;
+		}
+
+		@Override
+		public Ingredient getRepairMaterial() {
+			return this.repairMaterial.getValue();
+		}
+	}
+
+	public enum DarkQuartzArmorMaterial implements IArmorMaterial {
+		DARK_QUARTZ(VanillaPlusMod.MOD_ID + ":darkquartz", 1, new int[] { 3, 6, 7, 3 }, 1000,
+				SoundEvents.field_226142_fM_, 1.1f, () ->
+
+				{
+					return Ingredient.fromItems(iteminit.dark_quartz);
+				});
+
+		private static final int[] MAX_DAMAGE_ARRAY = new int[] { 330, 330, 330, 330 };
+		private final String name;
+		private final int maxDamageFactor;
+		private final int[] damageReductionAmmountArray;
+		private final int enchantability;
+		private final SoundEvent soundEvent;
+		private final float toughness;
+		private final LazyValue<Ingredient> repairMaterial;
+
+		private DarkQuartzArmorMaterial(String nameIn, int maxDamageFactorIn, int[] damageReductionAmmountIn,
 				int enchantabilityIn, SoundEvent soundEventIn, float toughnessIn,
 				Supplier<Ingredient> repairMaterialIn) {
 			this.name = nameIn;

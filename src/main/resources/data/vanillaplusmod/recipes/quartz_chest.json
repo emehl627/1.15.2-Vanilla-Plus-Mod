@@ -1,16 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "   ",
+    "I I",
     "III",
-    "I I"
+    "III"
   ],
   "key": {
     "I": {
-      "item": "vanillaplusmod:dragon_block"
+      "item": "minecraft:quartz"
     }
   },
   "result": {
-    "item": "vanillaplusmod:dragonite_helm"
+    "item": "vanillaplusmod:quartz_chest"
   }
 }

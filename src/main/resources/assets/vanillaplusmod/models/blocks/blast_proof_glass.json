@@ -1,6 +1,0 @@
-{
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "vanillaplusmod:blocks/blast_proof_glass"
-    }
-}

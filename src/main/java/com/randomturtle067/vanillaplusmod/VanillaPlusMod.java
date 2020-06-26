@@ -92,7 +92,7 @@ public class VanillaPlusMod
 		public ItemStack createIcon()
 		{
 			//Change This
-			return new ItemStack(iteminit.taco);
+			return new ItemStack(iteminit.logo);
 		}
 	}
 } 

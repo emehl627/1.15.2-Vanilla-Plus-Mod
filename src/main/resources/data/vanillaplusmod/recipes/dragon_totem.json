@@ -1,21 +1,21 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "IiI",
-    "IaI",
-    "IAI"
+    "ndn",
+    "ntn",
+    "nen"
   ],
   "key": {
-    "I": {
-      "item": "vanillaplusmod:dragon_block"
+    "n": {
+      "item": "minecraft:nether_star"
     },
-    "i": {
+    "d": {
       "item": "minecraft:dragon_egg"
     },
-    "a": {
+    "t": {
       "item": "minecraft:totem_of_undying"
     },
-    "A": {
+    "e": {
       "item": "minecraft:elytra"
     }
   },

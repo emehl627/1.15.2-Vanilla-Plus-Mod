@@ -19,7 +19,10 @@ public class SpectatorVisionEvent
 		PlayerEntity Player = event.getPlayer();
 		if (Player.isSpectator())
 		{
-			Player.addPotionEffect(new EffectInstance(new EffectInstance(Effects.NIGHT_VISION, 5, 255)));
+			Player.addPotionEffect(new EffectInstance(new EffectInstance(Effects.NIGHT_VISION, 60, 255)));
+		}else if (Player.canUpdate())
+		{
+			Player.removePotionEffect(Effects.NIGHT_VISION);
 		}
 	}
 }

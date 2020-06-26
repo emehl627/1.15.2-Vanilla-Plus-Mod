@@ -1,8 +1,6 @@
 package com.randomturtle067.vanillaplusmod.events;
 
 
-
-
 import com.randomturtle067.vanillaplusmod.VanillaPlusMod;
 
 import net.minecraft.entity.player.PlayerEntity;
@@ -20,12 +18,9 @@ public class SneakInvisEvent
 	public static void testJumpEvent(PlayerEvent event)
 	{
 		PlayerEntity Player = event.getPlayer();
-		if (Player.isSneaking())
+		if (Player.isCrouching())
 		{
 			Player.addPotionEffect(new EffectInstance(new EffectInstance(Effects.INVISIBILITY, 50, 255)));
-		}else if (Player.isInvisible())
-		{
-			Player.removePotionEffect(Effects.INVISIBILITY);
 		}
 	}
 }

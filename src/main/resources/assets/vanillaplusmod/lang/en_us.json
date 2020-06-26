@@ -3,8 +3,8 @@
 	"item.vanillaplusmod.dragonite": "Dragonite",
 	"item.vanillaplusmod.dragon_totem": "Dragon Totem",
 	"item.vanillaplusmod.fossil": "Fossil",
-	"item.vanillaplusmod.blast_proof_glass": "Blast Proof Glass",
 	"item.vanillaplusmod.dark_quartz": "Dark Quartz",
+	"item.vanillaplusmod.logo": "Logo",
 	
 	"item.vanillaplusmod.dragonite_sword": "Dragonite Sword",
 	"item.vanillaplusmod.dragonite_pik": "Dragonite Pickaxe",
@@ -16,6 +16,11 @@
 	"item.vanillaplusmod.quartz_shovel": "Quartz Shovel",
 	"item.vanillaplusmod.quartz_axe": "Quartz Axe",
 	"item.vanillaplusmod.quartz_hoe": "Quartz Hoe",
+	"item.vanillaplusmod.dark_quartz_sword": "Dark Quartz Sword",
+	"item.vanillaplusmod.dark_quartz_pik": "Dark Quartz Pickaxe",
+	"item.vanillaplusmod.dark_quartz_shovel": "Dark Quartz Shovel",
+	"item.vanillaplusmod.dark_quartz_axe": "Dark Quartz Axe",
+	"item.vanillaplusmod.dark_quartz_hoe": "Dark Quartz Hoe",
 	
 	"item.vanillaplusmod.dragonite_helm": "Dragonite Helmet",
 	"item.vanillaplusmod.dragonite_chest": "Dragonite Chestplate",
@@ -29,6 +34,10 @@
 	"item.vanillaplusmod.quartz_chest": "Quartz Chestplate",
 	"item.vanillaplusmod.quartz_legs": "Quartz Leggings",
 	"item.vanillaplusmod.quartz_boots": "Quartz Boots",
+	"item.vanillaplusmod.dark_quartz_helm": "Dark Quartz Helmet",
+	"item.vanillaplusmod.dark_quartz_chest": "Dark Quartz Chestplate",
+	"item.vanillaplusmod.dark_quartz_legs": "Dark Quartz Leggings",
+	"item.vanillaplusmod.dark_quartz_boots": "Dark Quartz Boots",
 
 	"block.vanillaplusmod.contained_lava": "Contained Lava",
 	"block.vanillaplusmod.dragonite_ore": "Dragonite Ore",

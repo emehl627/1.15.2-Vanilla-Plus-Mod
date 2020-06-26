@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "Q Q",
+    "Q Q"
+  ],
+  "Q": {
+    "I": {
+      "item": "minecraft:dark_quartz"
+    }
+  },
+  "result": {
+    "item": "vanillaplusmod:dark_quartz_boots"
+  }
+}

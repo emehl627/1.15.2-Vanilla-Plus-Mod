@@ -18,13 +18,13 @@ public class FossilOreGenerator {
 		{
 				biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(
 						new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, Blockinit.fossil_ore.getDefaultState(), 10)).withPlacement(Placement.COUNT_RANGE.configure(
-						new CountRangeConfig(10, 5, 5, 30))));
+						new CountRangeConfig(5, 5, 5, 30))));
 				
 				if (biome == Biomes.DESERT) 
 				{
 					biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(
 							new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, Blockinit.fossil_ore.getDefaultState(), 10)).withPlacement(Placement.COUNT_RANGE.configure(
-							new CountRangeConfig(15, 5, 5, 30))));
+							new CountRangeConfig(7, 5, 5, 30))));
 				}
 				
 		}
